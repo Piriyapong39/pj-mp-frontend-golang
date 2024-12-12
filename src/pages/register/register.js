@@ -17,24 +17,23 @@ document.querySelector(".global-form").addEventListener("submit", async (e) => {
         return;
     }
     console.log(data);
-
-    //  try {
-    //     const ulr = "localhost:8080/examaple"
-    //     const response = await fetch(ulr, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(formData)
-    //     })
-    //      const result = response.json()
-    //      if(response.ok){
-    //         console.log(result)
-    //      } else {
-    //         throw Error(result.error)
-    //      }
+     try {
+        const ulr = "localhost:8080/examaple"
+        const response = await fetch(ulr, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+         const result = response.json()
+         if(response.ok){
+            console.log(result)
+         } else {
+            throw Error(result.error)
+         }
         
-    // } catch (error) {
-    //     console.log(error)
-    // }
+    } catch (error) {
+        console.log(error)
+    }
 });
